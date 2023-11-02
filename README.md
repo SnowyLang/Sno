@@ -4,6 +4,7 @@
 > <br/> File Extension *.smd*
 > <br/> Compiles into a flake.html file
 > <br/> Comments are declared with `*`
+> <br/> [Old Website](https://classicmc-studios.github.io/Snowy)
 
 `$p`, `$-`, `$+`, all require `$l` to contain data
 
