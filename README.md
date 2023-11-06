@@ -1,6 +1,6 @@
-# Snowy 🌨️ 
+# Sno 🌨️ 
 
-> A static site generator that ships 0 JavaScript to the client ever.
+> A html preprocessor designed as a empowered markdown
 > <br/> File Extension *.smd*
 > <br/> Compiles into a flake.html file
 > <br/> Comments are declared with `*`
