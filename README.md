@@ -1,4 +1,4 @@
-# Sno 🌨️ 
+# Sno 🌨️ *(v2)* [BLIZZARD](https://h)
 
 > A html preprocessor designed as a empowered markdown
 > <br/> File Extension *.smd*
@@ -12,22 +12,21 @@
 
 |Commands|HTML equivilant|
 |-----------|-----------|
-|`$#`|`<h1></h1>`|
-|`$t`|`<title></title>`|
-|`$b`|`<br/>`|
-|`$=`|`<link rel="stylesheet" href=""/>`|
-|`$!`|`text`|
-|`$p`|`<p class="held class"></p>`|
-|`$%`|`Opens a <div> holds div class data`|
-|`$^`|`Closes a div </div>`|
-|`$l`|`(holds a class (IMG, Span*))`|
-|`$-`|`<span class="held class"></span>`|
-|`$.`|`(holds a href)`|
-|`$a`|`<a href="href"></a>`|
-|`$+`|`<img src="held class"/>`|
-|`$\|`|`Choose a background color $\|color`|
-|`$i`|`<i class="data"></i>`|
-|`$f`|`favicon href`|
+|`$t.TITLE`|`<title>{TITLE}</title>`|
+|`$#.CLASSES\|TEXT`|`<h1 class={CLASSES}>{TEXT}</h1>`|
+|`$##.CLASSES\|TEXT`|`<h2 class={CLASSES}>{TEXT}</h2>`|
+|`$###.CLASSES\|TEXT`|`<h3 class={CLASSES}>{TEXT}</h3>`|
+|`$!.CLASSES\|TEXT`|`<span class={CLASSES}>{TEXT}</span>`|
+|`* Comment`|`{nothing}`|
+|`$%.CLASSES`|`<div class={CLASSES}>`|
+|`$^`|`</div>`|
+|`$=LINK`|`<link rel="stylesheet" href={link}/>`|
+|`$&.RGB`|`<style>body{background-color:{RGB};}</style>`|
+|`$br0`|`0 is repleaceable with a 1 digit num to <br/>`|
+|`$l.HREF`|`(Saves HREF for use in <a> tag)`|
+|`$a.CLASSES\|TEXT`|`<a href={L}class={CLASSES}>{TEXT}</a>`|
+|`$i.CLASSES\|TEXT`|`<i class={CLASSES}>{TEXT}</i>`|
+|`$+.CLASSES\|LINK`|`<img src={LINK} class={CLASSES}`|
 
 [index.md is the main website](#dsus)
 
