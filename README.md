@@ -28,8 +28,3 @@
 |`$i.CLASSES\|TEXT`|`<i class={CLASSES}>{TEXT}</i>`|
 |`$+.CLASSES\|LINK`|`<img src={LINK} class={CLASSES}`|
 
-[index.md is the main website](#dsus)
-
-[Example1 is a random test](#dsus)
-
-[Example2 is a recreation of TWF article1](#dsus)
