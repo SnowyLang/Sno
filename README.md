@@ -6,9 +6,6 @@
 > <br/> Comments are declared with `*`
 > <br/> [Website](https://snowylang.github.io/)
 
-`$p`, `$-`, `$+`, all require `$l` to contain data
-
-`$a` requires `$.` to contain data
 
 |Commands|HTML equivilant|
 |-----------|-----------|
