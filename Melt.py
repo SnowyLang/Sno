@@ -1,5 +1,5 @@
 f = open("./flake.smd", "r")
-endlines = ["<!DOCTYPE html>","<head>","<meta charset=\"UTF-8\">","<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">","</head>","<body>"]
+endlines = ["<!DOCTYPE html>","<head>","<meta charset=\"UTF-8\">","<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",]
 lines = []
 mode = ""
 hrefed=""
@@ -10,8 +10,9 @@ def newLine(l,m,s,led):
   dsus=l.strip("\n")
   dsus = l.rstrip("|")
   sess= s.rstrip("\n")
-  if m != "title" and m !="stylesheet" and m != "a" and m!="div" and m!="img" and m!="bgcolor" and m!="insert":
+  if m != "title" and m !="stylesheet" and m != "a" and m!="div" and m!="img" and m!="bgcolor" and m!="insert" and m!="favicon" and m!="script" and m!="button":
     #base algorithimicly    
+    # dsus = class or the first sess = the second or content
     if dsus != "" and sess != "":
       endlines.append(f"<{m} class=\"{dsus}\">{sess}</{m}>")
   elif m=="title":
@@ -29,6 +30,12 @@ def newLine(l,m,s,led):
     endlines.append(f"<i class=\"{dsus.strip("\n")}\"></i>")
   elif m=="bgcolor":
     endlines.append("<style>body{background-color:"+dsus.strip("\n")+";}</style>")
+  elif m=="favicon":
+    endlines.append(f"<link rel=\"icon\" type=\"image/x-icon\" href=\"{dsus.strip("\n")}\">")
+  elif m=="button":
+    endlines.append(f"<button {led.strip("\n")} class=\"{dsus.strip("\n")}\">{sess.strip("\n")}</button>")
+  elif m=="script":
+    endlines.append(f"<script src=\"{dsus.strip("\n")}\"></script>")
 def breakLine(i):
   dresus = int(i)
   for x in range(dresus):
@@ -44,6 +51,7 @@ def generate():
   classes = ""
   string = ""
   subi=0
+  endhead = 0
   whatheadytype = 0
   reallybreak = 0
   loadData=""
@@ -51,6 +59,8 @@ def generate():
     for elem in line:
       if elem == "*" and subi==0:
         print("")
+      if elem == "&" and subi==0:
+        endhead = 1
       if elem == "$" and subi==0:
         dolla = 1
       if elem == "t" and dolla == 1:
@@ -59,6 +69,12 @@ def generate():
       if elem == "!" and dolla == 1:
         mode = "span"
         dolla=2
+      if elem == "`" and dolla == 1:
+        mode = "script"
+        dolla=2
+      if elem == "h" and endhead == 1:
+        endhead = 0
+        endlines.append("H-END")
       if elem == "a" and dolla == 1:
         mode = "a"
         dolla=2
@@ -67,6 +83,12 @@ def generate():
         dolla=2
       if elem == "&" and dolla == 1:
         mode = "bgcolor"
+        dolla=2
+      if elem == "x" and dolla == 1:
+        mode = "button"
+        dolla=2
+      if elem == "f" and dolla == 1:
+        mode = "favicon"
         dolla=2
       if elem == "+" and dolla == 1:
         mode = "img"
@@ -129,11 +151,12 @@ def generate():
     contents = False
     slothqyeen = False
     string = ""
-  endlines.append("</body>")
-  endlines.append("</html>")
   for lo in endlines:
     x = open("./flake.html", "a+")
-    x.write(lo+"\n")
+    if lo =="H-END":
+      x.write("</head>"+"\n")
+    else:
+      x.write(lo+"\n")
     z+=1
   print("CONVERSION COMPLETE .smd => .html")
 generate()
