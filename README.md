@@ -1,4 +1,4 @@
-# Sno 🌨️ *(v2.1)* [BLIZZARD](https://h)
+# SnowyMD 🌨️ *(v2.1)* [BLIZZARD](https://h)
 
 > A html preprocessor designed as a empowered markdown
 > <br/> File Extension *.smd*
