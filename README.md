@@ -5,7 +5,7 @@
 > <br/> Compiles into a flake.html file
 > <br/> Comments are declared with `*`
 > <br/> [Website](https://snojs.github.io/snowyMD)<br/>
-> For Script tags use &`.SRC
+> For Script tags use $`.SRC
 
 
 |Commands|HTML equivilant|
