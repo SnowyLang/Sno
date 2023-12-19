@@ -110,15 +110,15 @@ def generate():
       if elem == "#" and dolla == 1:
         mode = "h1"
         dolla=2
-        whatheadytype +=1
+        whatheadytype =1
       elif elem == "#" and whatheadytype == 1:
         mode = "h2"
         dolla=2
-        whatheadytype +=1
+        whatheadytype =2
       elif elem == "#" and whatheadytype == 2:
         mode = "h3"
         dolla=2
-        whatheadytype +=1
+        whatheadytype =3
       # end header crap
       if elem == "=" and dolla == 1:
         mode = "stylesheet"
